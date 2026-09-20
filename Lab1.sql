@@ -3,7 +3,7 @@ use college;
 create table batch3(
 Name varchar(20),
 Age int);
-insert into batch3 (name, age) values("Harshit",20),("Rohit",21);
+insert into batch3 (name, age) values('Harshit',20),('Rohit',21);
 select * from batch3;
 select name from batch3;
 alter table batch3 add column roll_no int;
