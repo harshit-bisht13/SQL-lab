@@ -7,19 +7,20 @@ use college;
         Semail varchar(100) Not Null,
         Scity varchar(100),
         SMarks int check(SMarks>60),
-        Scourse varchar(100)
+        Scourse varchar(100),
+        Did varchar(100) references department(did)
         );
         Describe student;
         Select *from student;
         Drop table student;
         Insert into student values
-			('S01','Amit','1234','abc@gmail.com','Delhi',66,'BCA'),
-            ('S02','Binay','2345','Bcd@gmail.com','Delhi',78,'Btech'),
-            ('S03','Chitra','3456','cde@gmail.com','Bhimtal',85,'Btech'),
-            ('S08','Deepak','4567','def@gmail.com','Bhimtal',73,'MCA'),
-            ('S04','Garima','5678','efg@gmail.com','Nainital',75,'BCA'),
-            ('S05','Lolit','6789','ghi@outlook.com','Dehradun',91,'Btech'),
-            ('S06','Yash','7890','hij@gmail.com','Delhi',86,'Btech');
+			('S01','Amit','1234','abc@gmail.com','Delhi',66,'BCA','D01'),
+            ('S02','Binay','2345','Bcd@gmail.com','Delhi',78,'Btech','D01'),
+            ('S03','Chitra','3456','cde@gmail.com','Bhimtal',85,'Btech',''),
+            ('S08','Deepak','4567','def@gmail.com','Bhimtal',73,'MCA','D02'),
+            ('S04','Garima','5678','efg@gmail.com','Nainital',75,'BCA','D03'),
+            ('S05','Lolit','6789','ghi@outlook.com','Dehradun',91,'Btech','D04'),
+            ('S06','Yash','7890','hij@gmail.com','Delhi',86,'Btech','D04');
 Insert into student values
 -- (null,'Shubham','8901','klm@gmail.com','Haridwar','78','Mtech'),
 ('S09','Shubham Rawat',null,'ijk@gmail.com','Haridwar','78','Mtech');
@@ -37,6 +38,7 @@ Select sname from student where sname Like '_a%';
 select sname, scourse,smarks from student where semail like '%@outlook.com';
 Select sname from student where sname like 'D%';
 Select scontact, semail from student where smarks between 70 and 85;
+
 
 
 
