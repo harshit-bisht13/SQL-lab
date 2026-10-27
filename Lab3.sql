@@ -39,6 +39,25 @@ select sname, scourse,smarks from student where semail like '%@outlook.com';
 Select sname from student where sname like 'D%';
 Select scontact, semail from student where smarks between 70 and 85;
 
+SELECT d.DName, d.Dcontact, d.DLocation
+FROM department d
+JOIN student s ON d.Did = s.Did
+WHERE s.Sname = 'Lolit';
+ 
+SELECT s.Sname
+FROM student s
+JOIN department d ON s.Did = d.Did
+WHERE d.DLocation = 'West';
 
+Select d.dname, d.dlocation from department d join student s on s.did=d.did where s.Semail='%@gmail.com';
 
+Select s.sname, s.scity, d.dname from student s join department d on s.Did=d.Did where smarks between 70 and 90;
+Set sql_safe_updates=0;
+UPDATE department
+SET DLocation = 'Dehradun'
+WHERE Did = 'D04';
 
+SELECT s.Sname, s.Scontact, s.Semail
+FROM student s
+JOIN department d ON s.Did = d.Did
+WHERE s.Scity = d.DLocation;
